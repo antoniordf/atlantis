@@ -1,0 +1,14 @@
+<h1>New Yacht</h1>
+
+<%= simple_form_for @yacht do |f| %>
+  <%= f.input :name %>
+  <%= f.input :length %>
+  <%= f.input :capacity %>
+  <%= f.input :description %>
+  <%= f.input :crew %>
+  <%= f.input :price_per_day %>
+  <%= f.input :location %>
+  <%= f.input :cabin %>
+  <%= f.input :speed %>
+  <%= f.submit "Add Yacht", class: "btn btn-primary" %>
+<% end %>
