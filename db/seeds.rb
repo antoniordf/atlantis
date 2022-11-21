@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+my_yacht = Yacht.new(name: "Capri",
+                     length: 29,
+                     capacity: 20,
+                     description: "Its a good yacht",
+                     crew: 10,
+                     price_per_day: 50_000,
+                     location: "monaco",
+                     cabin: 10,
+                     speed: 20)
+my_yacht.save!
