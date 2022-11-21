@@ -1,0 +1,17 @@
+<h1><%= @yacht.name %></h1>
+
+<ul>
+  <li><%= @yacht.length %></li>
+  <li><%= @yacht.capacity %></li>
+  <li><%= @yacht.cabin %></li>
+  <li><%= @yacht.crew %></li>
+  <li><%= @yacht.speed %></li>
+  <li><%= @yacht.description %></li>
+  <li><%= @yacht.location %></li>
+  <li><%= @yacht.price_per_day %></li>
+</ul>
+
+<%= link_to "Delete",
+  yacht_path(@yacht),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
