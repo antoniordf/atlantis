@@ -1,7 +1,15 @@
-<h1>List of Yachts</h1>
-
-<ul>
-  <% @yachts.each do |yacht| %>
-    <%= yacht.name %>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @yachts.each do |yacht| %>
+      <div class="card col-6">
+        <img src="https://yachtshop.bluewateryachting.com/media/cache/app_shop_yacht_large_thumbnail/56/da/b2faecfaf01d3b7e74f66ecf8711.jpeg" />
+        <div class="card-infos">
+          <div>
+            <h2><%= yacht.name %></h2>
+            <p><%= yacht.description %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
