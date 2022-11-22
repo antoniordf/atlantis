@@ -1,23 +1,24 @@
 <div class="container">
   <div class="row">
     <% @yachts.each do |yacht| %>
+    <div class="spacing col-lg-6 col-md-12 col-sm-12">
       <%= link_to yacht_path(yacht) do %>
-        <div class="card col-6">
-          <%# <%= cl_image_tag @article.photos.first.key, height: 300px, width: fill, object-fit: cover; %> %>
-          <img src="https://yachtshop.bluewateryachting.com/media/cache/app_shop_yacht_large_thumbnail/56/da/b2faecfaf01d3b7e74f66ecf8711.jpeg" />
-          <div class="card-infos">
-            <div>
-              <h2><%= yacht.name %></h2>
-              <div class="short-disc">
-                <p>Length: <%= yacht.length %> |</p>
-                <p>Capacity: <%= yacht.capacity %> |</p>
-                <p>Cabins: <%= yacht.cabin %> |</p>
-                <p>Location: <%= yacht.location %></p>
-              </div>
+      <div class="card">
+        <%# <%= cl_image_tag @article.photos.first.key, height: 300px, width: fill, object-fit: cover; %>
+        <img src="https://yachtshop.bluewateryachting.com/media/cache/app_shop_yacht_large_thumbnail/56/da/b2faecfaf01d3b7e74f66ecf8711.jpeg" />
+        <div class="card-infos">
+          <div>
+            <h2><%= yacht.name %></h2>
+            <div class="short-disc">
+              <p>Length: <%= yacht.length %> |</p>
+              <p>Capacity: <%= yacht.capacity %> |</p>
+              <p>Cabins: <%= yacht.cabin %> |</p>
+              <p>Location: <%= yacht.location %></p>
             </div>
           </div>
         </div>
       <% end %>
+    </div>
     <% end %>
   </div>
 </div>
