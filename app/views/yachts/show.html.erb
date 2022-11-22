@@ -1,21 +1,30 @@
-<h1><%= @yacht.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.9)),url(https://res.cloudinary.com/dqebjuhkq/image/upload/v1669136685/https___d1e00ek4ebabms.cloudfront.net_production_95d65ea6-2739-4f0b-9223-017849b04180_l5zyij.avif);">
+  <div class="banner-text">
+    <h1><%= @yacht.name %></h1>
+    <div class="button-wrapper">
 
-<ul>
-  <li><%= @yacht.length %></li>
-  <li><%= @yacht.capacity %></li>
-  <li><%= @yacht.cabin %></li>
-  <li><%= @yacht.crew %></li>
-  <li><%= @yacht.speed %></li>
-  <li><%= @yacht.description %></li>
-  <li><%= @yacht.location %></li>
-  <li><%= @yacht.price_per_day %></li>
-</ul>
+    </div>
+  </div>
+</div>
 
-<% @yacht.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div class="container">
+  <ul>
+    <li>Length: <%= @yacht.length %></li>
+    <li>Capacity: <%= @yacht.capacity %></li>
+    <li>Cabins: <%= @yacht.cabin %></li>
+    <li>Crew: <%= @yacht.crew %></li>
+    <li>Speed: <%= @yacht.speed %></li>
+    <li>Description: <%= @yacht.description %></li>
+    <li>Location: <%= @yacht.location %></li>
+    <li>Price per day: <%= @yacht.price_per_day %></li>
+  </ul>
 
-<%= link_to "Delete",
-  yacht_path(@yacht),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  <% @yacht.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
+  <%= link_to "Delete",
+    yacht_path(@yacht),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>
