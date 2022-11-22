@@ -5,7 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+my_user = User.new(email: "test1@gmail.com", password: "123456")
+my_user.save!
+
+
 my_yacht = Yacht.create(name: "Capri",
+
                      length: 29,
                      capacity: 20,
                      description: "Its a good yacht",
@@ -14,3 +20,7 @@ my_yacht = Yacht.create(name: "Capri",
                      location: "monaco",
                      cabin: 10,
                      speed: 20)
+
+my_yacht.user = my_user
+my_yacht.save!
+
