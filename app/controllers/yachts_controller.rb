@@ -54,7 +54,8 @@ class YachtsController < ApplicationController
                                   :price_per_day,
                                   :location,
                                   :cabin,
-                                  :speed)
+                                  :speed,
+                                  photos: [])
   end
 
   def find_yacht
