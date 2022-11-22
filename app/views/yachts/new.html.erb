@@ -10,5 +10,6 @@
   <%= f.input :location %>
   <%= f.input :cabin %>
   <%= f.input :speed %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add Yacht", class: "btn btn-primary" %>
 <% end %>
