@@ -11,6 +11,10 @@
   <li><%= @yacht.price_per_day %></li>
 </ul>
 
+<% @yacht.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <%= link_to "Delete",
   yacht_path(@yacht),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}

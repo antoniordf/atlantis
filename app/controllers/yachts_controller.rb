@@ -10,7 +10,8 @@ class YachtsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @yacht = Yacht.new
@@ -18,6 +19,7 @@ class YachtsController < ApplicationController
 
   def create
     @yacht = Yacht.new(yacht_params)
+    @yacht.user = current_user
     if @yacht.save
       redirect_to yachts_path
     else
@@ -25,10 +27,21 @@ class YachtsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
+    # This is the array of photos that I want to upload
+    array = params[:yacht][:photos]
+    # Here we update all of the other info for a yacht - excluding photos
     if @yacht.update(yacht_params)
+      # The first element of the array is an empty string - something to do with active storage
+      # We delete the empty string
+      array.delete_at(0)
+      # What remains are the other photos. We loop through them and attach them to existing photos
+      # Following the convention that active storage expects
+      array.each { |photo| @yacht.photos.attach(io: photo.tempfile, filename: "test", content_type: "image/png") }
+      @yacht.save
       redirect_to yacht_path(@yacht)
     else
       render :new, status: :unprocessable_entity
