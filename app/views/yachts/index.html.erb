@@ -6,7 +6,12 @@
         <div class="card-infos">
           <div>
             <h2><%= yacht.name %></h2>
-            <p><%= yacht.description %></p>
+            <div class="short-disc">
+              <p>Length: <%= yacht.length %> |</p>
+              <p>Capacity: <%= yacht.capacity %> |</p>
+              <p>Cabins: <%= yacht.cabin %> |</p>
+              <p>Location: <%= yacht.location %></p>
+            </div>
           </div>
         </div>
       </div>

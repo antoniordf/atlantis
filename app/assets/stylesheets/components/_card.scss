@@ -16,6 +16,11 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-align: center;
+  padding-bottom: 8px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 2px;
 }
 
 .card p {
@@ -32,7 +37,15 @@
   justify-content: space-between;
   // align-items: flex-end;
   // position: relative;
-  background-color: #16679F;
+  background-color: rgba(1,40,64,0.7);
   position: absolute;
   width: 100%;
+}
+
+.card .short-disc {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  color: white;
+  font-family: "Inter", sans-serif;
 }
