@@ -1,0 +1,14 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a booking to your <%= @yacht.name %> yacht</h3>
+        <%= simple_form_for [@yacht, @booking] do |f| %>
+          <%= f.input :start_date, placeholder: "Enter a start_date" %>
+          <%= f.input :end_date, placeholder: "Enter a end_date" %>
+          <%= f.submit class: "btn btn-flat" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
