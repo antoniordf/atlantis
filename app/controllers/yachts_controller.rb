@@ -10,7 +10,8 @@ class YachtsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @yacht = Yacht.new
@@ -18,6 +19,7 @@ class YachtsController < ApplicationController
 
   def create
     @yacht = Yacht.new(yacht_params)
+    @yacht.user = current_user
     if @yacht.save
       redirect_to yachts_path
     else
@@ -25,7 +27,8 @@ class YachtsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @yacht.update(yacht_params)
