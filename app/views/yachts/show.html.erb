@@ -8,23 +8,59 @@
 </div>
 
 <div class="container">
-  <ul>
-    <li>Length: <%= @yacht.length %></li>
-    <li>Capacity: <%= @yacht.capacity %></li>
-    <li>Cabins: <%= @yacht.cabin %></li>
-    <li>Crew: <%= @yacht.crew %></li>
-    <li>Speed: <%= @yacht.speed %></li>
-    <li>Description: <%= @yacht.description %></li>
-    <li>Location: <%= @yacht.location %></li>
-    <li>Price per day: <%= @yacht.price_per_day %></li>
-  </ul>
+  <div class="features">
+    <div class="feature">
+      <i class="fa-solid fa-ruler"></i>
+      <p>Length <%= @yacht.length %> sqm.</p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-person"></i>
+      <p>Capacity <%= @yacht.capacity %></p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-person-booth"></i>
+      <p>Cabins <%= @yacht.cabin %></p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-anchor"></i>
+      <p>Crew <%= @yacht.crew %></p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-gauge-high"></i>
+      <p>Speed <%= @yacht.speed %> knots</p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      <p>Price/day £<%= @yacht.price_per_day %></p>
+    </div>
+    <div class="feature">
+      <i class="fa-solid fa-location-dot"></i>
+      <p>Location <%= @yacht.location %></p>
+    </div>
+  </div>
 
-  <% @yacht.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
+  <br>
 
-  <%= link_to "Delete",
-    yacht_path(@yacht),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+  <div class="description">
+    <p>Description: <%= @yacht.description %></p>
+  </div>
+
+  <br>
+
+  <div class="images">
+    <% @yacht.photos.each do |photo| %>
+      <div class="image">
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div class="btn btn-primary shadow p-3 mb-5 rounded">
+    <%= link_to "Delete Yacht",
+      yacht_path(@yacht),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </div>
 </div>
