@@ -4,7 +4,7 @@ class YachtsController < ApplicationController
   def index
     if params[:query].present?
       @query = params[:query]
-      @yachts = Yachat.where("name LIKE ?", "%#{params[:query]}%")
+      @yachts = Yacht.where("name LIKE ?", "%#{params[:query]}%")
     else
       @yachts = Yacht.all
     end
