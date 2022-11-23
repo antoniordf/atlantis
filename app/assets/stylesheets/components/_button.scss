@@ -1,0 +1,28 @@
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 200px;
+  padding: 0px;
+  margin: 0 auto;
+}
+
+.book-button {
+  border: 2px solid gray;
+  border-radius: 40px;
+  width: 150px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #ba0000;
+    border-color: #ba0000;
+    font-weight: bold;
+  }
+}

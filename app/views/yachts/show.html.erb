@@ -1,8 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.9)),url(https://res.cloudinary.com/dqebjuhkq/image/upload/v1669136685/https___d1e00ek4ebabms.cloudfront.net_production_95d65ea6-2739-4f0b-9223-017849b04180_l5zyij.avif);">
   <div class="banner-text">
     <h1><%= @yacht.name %></h1>
+    <br>
     <div class="button-wrapper">
-
+      <p class="book-button"><%= link_to "Book Yacht", new_yacht_booking_path(@yacht) %></p>
     </div>
   </div>
 </div>
