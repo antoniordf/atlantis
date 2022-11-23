@@ -21,6 +21,7 @@
   font-weight: bold;
 
   &:hover {
+    color: white;
     background-color: #ba0000;
     border-color: #ba0000;
     font-weight: bold;
@@ -50,6 +51,6 @@
   text-decoration: none;
 }
 
-.book-button a {
+ a {
   text-decoration: none;
 }
