@@ -26,3 +26,26 @@
     font-weight: bold;
   }
 }
+
+.delete-button {
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  box-shadow: 1px 1px 3px #c8c3c3;
+
+  &:hover {
+    border: 2px solid gray;
+  }
+}
+
+.delete-button a {
+  color: gray;
+  text-decoration: none;
+}
