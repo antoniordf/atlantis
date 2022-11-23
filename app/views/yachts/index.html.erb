@@ -1,8 +1,12 @@
-<div class="banner">
-  <video width="320" height="240" autoplay loop muted>
-    <source src="video/yacht.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-  </video>
+
+<div class="banner-video">
+  <%= video_tag "water.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+  <div class="text">
+    <h1>Luxury Yachts for Charter</h1>
+    <p>We are proven yacht charter experts in the Mediterranean, Caribbean and across the globe
+        with a large selection of sailing and motor yachts for rent.
+    </p>
+  </div>
 </div>
 
 <div class="container">
