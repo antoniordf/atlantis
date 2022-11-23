@@ -59,11 +59,16 @@
   </div>
 
   <br>
-
-  <div class="button">
-    <%= link_to "Delete Yacht",
-      yacht_path(@yacht),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
+  <div class="actions">
+    <div class="button">
+      <%= link_to "Delete Yacht",
+        yacht_path(@yacht),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
+    <div class="button">
+      <%= link_to "Edit Yacht",
+        edit_yacht_path(@yacht) %>
+    </div>
   </div>
 </div>
