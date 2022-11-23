@@ -9,7 +9,7 @@
 }
 
 .book-button {
-  border: 2px solid gray;
+  border: 2px solid white;
   border-radius: 40px;
   width: 150px;
   height: 60px;
@@ -47,5 +47,9 @@
 
 .button a {
   color: gray;
+  text-decoration: none;
+}
+
+.book-button a {
   text-decoration: none;
 }
