@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "../yachts", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "ATLANTIS.png" %>
     <% end %>
 
@@ -20,7 +20,7 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://pyxis.nymag.com/v1/imgs/dec/970/81245a2b4368ace8e61988cedea6a204d6-30-Elon-Musk.rsquare.w700.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Booking", "#", class: "dropdown-item" %>
+              <%= link_to "My Booking", "../bookings", class: "dropdown-item" %>
               <%= link_to "My Hosting", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               <%= link_to "Help", "#", class: "dropdown-item" %>

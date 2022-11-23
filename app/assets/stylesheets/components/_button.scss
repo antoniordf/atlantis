@@ -9,7 +9,7 @@
 }
 
 .book-button {
-  border: 2px solid gray;
+  border: 2px solid white;
   border-radius: 40px;
   width: 150px;
   height: 60px;
@@ -21,10 +21,15 @@
   font-weight: bold;
 
   &:hover {
+    color: white;
     background-color: #ba0000;
     border-color: #ba0000;
     font-weight: bold;
   }
+}
+
+.book-button a {
+  color: white;
 }
 
 .button {
