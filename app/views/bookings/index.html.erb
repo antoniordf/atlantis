@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
-    <% current_user.bookings.each do |booking| %>
-      <%= booking.yacht.name %>
-    <% end %>
+    <ul>
+      <% current_user.bookings.each do |booking| %>
+        <li><%= booking.yacht.name %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
