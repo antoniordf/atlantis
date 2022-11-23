@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "../yachts", class: "navbar-brand" do %>
       <%= image_tag "ATLANTIS.png" %>
     <% end %>
 
@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Add your yacht", "#", class: "nav-link" %>
+            <%= link_to "Add your yacht", "/yachts/new", class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
