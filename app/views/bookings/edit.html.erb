@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h3>Book <%= @yacht.name %> yacht 🙋</h3>
+        <h3>Change your booking of <%= @yacht.name %> yacht</h3>
         <%= simple_form_for [@yacht, @booking] do |f| %>
           <%= f.input :start_date, placeholder: "Enter a start_date" %>
           <%= f.input :end_date, placeholder: "Enter a end_date" %>
-          <%= f.submit "Create a booking", class: "btn btn-flat" %>
+          <%= f.submit "Edit a booking", class: "btn btn-flat" %>
         <% end %>
       </div>
     </div>

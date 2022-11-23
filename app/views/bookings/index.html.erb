@@ -2,7 +2,7 @@
   <div class="row">
     <ul>
       <% current_user.bookings.each do |booking| %>
-        <li><%= booking.yacht.name %></li>
+        <li><%= link_to "#{booking.yacht.name}", yacht_bookings_path(@bookings) %></li>
       <% end %>
     </ul>
   </div>
