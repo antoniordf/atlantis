@@ -53,7 +53,6 @@ class YachtsController < ApplicationController
   end
 
   def destroy
-    raise
     @yacht.destroy
     redirect_to yachts_path, status: :see_other
   end
