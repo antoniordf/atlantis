@@ -8,27 +8,35 @@
   </div>
 </div>
 
+<br>
+
+<div class="description">
+  <p><%= @yacht.description %></p>
+</div>
+
+<br>
+
 <div class="container">
   <div class="features">
     <div class="feature">
       <i class="fa-solid fa-ruler"></i>
-      <p>Length <%= @yacht.length %> sqm.</p>
+      <p>Length: <%= @yacht.length %> m</p>
     </div>
     <div class="feature">
       <i class="fa-solid fa-person"></i>
-      <p>Capacity <%= @yacht.capacity %></p>
+      <p>Capacity: <%= @yacht.capacity %></p>
     </div>
     <div class="feature">
       <i class="fa-solid fa-person-booth"></i>
-      <p>Cabins <%= @yacht.cabin %></p>
+      <p>Cabins: <%= @yacht.cabin %></p>
     </div>
     <div class="feature">
       <i class="fa-solid fa-anchor"></i>
-      <p>Crew <%= @yacht.crew %></p>
+      <p>Crew: <%= @yacht.crew %></p>
     </div>
     <div class="feature">
       <i class="fa-solid fa-gauge-high"></i>
-      <p>Speed <%= @yacht.speed %> knots</p>
+      <p>Speed: <%= @yacht.speed %> knots</p>
     </div>
     <div class="feature">
       <i class="fa-solid fa-hand-holding-dollar"></i>
@@ -36,14 +44,8 @@
     </div>
     <div class="feature">
       <i class="fa-solid fa-location-dot"></i>
-      <p>Location <%= @yacht.location %></p>
+      <p>Location: <%= @yacht.location %></p>
     </div>
-  </div>
-
-  <br>
-
-  <div class="description">
-    <p>Description: <%= @yacht.description %></p>
   </div>
 
   <br>

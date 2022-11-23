@@ -1,9 +1,6 @@
 .features {
-  flex-grow: 1;
-  width: 60%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
 
   .feature {
     width: 180px;
@@ -12,7 +9,7 @@
     justify-content: center;
     font-size: 15px;
     padding: 5px 5px;
-    margin: 0px 0px;
+    margin: 20px 0px;
 
     &:hover {
       color: rgb(94, 185, 234);
@@ -22,6 +19,7 @@
 
 p {
   margin: 0px;
+  font-family: Inter, sans-serif;
 }
 
 .fa-person {
@@ -34,6 +32,8 @@ p {
   color: gray;
   font-size: 25px;
   font-weight: light;
+  margin-top: 40px;
+  font-family: Inter, sans-serif;
 }
 
 .images {
