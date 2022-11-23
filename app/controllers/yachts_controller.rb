@@ -18,9 +18,13 @@ class YachtsController < ApplicationController
   end
 
   def create
+    array = params[:yacht][:photos]
     @yacht = Yacht.new(yacht_params)
     @yacht.user = current_user
     if @yacht.save
+      array.delete_at(0)
+      array.each { |photo| @yacht.photos.attach(io: photo.tempfile, filename: "test", content_type: "image/png") }
+      @yacht.save
       redirect_to yachts_path
     else
       render :new, status: :unprocessable_entity
