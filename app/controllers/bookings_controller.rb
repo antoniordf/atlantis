@@ -2,12 +2,7 @@ class BookingsController < ApplicationController
   before_action :find_yacht, only: [:new, :create]
 
   def index
-    if params[:query].present?
-      @query = params[:query]
-      @bookings = Booking.where("name LIKE ?", "%#{params[:query]}%")
-    else
-      @bookings = Booking.all
-    end
+    @bookings = Booking.all
   end
 
   def show
@@ -54,6 +49,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date_time, :end_date_time)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
