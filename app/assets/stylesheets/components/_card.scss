@@ -3,7 +3,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 0;
-  position: relative
+  position: relative;
+  border-radius: 10px;
 }
 
 .card > img {
@@ -48,4 +49,14 @@
   justify-content: center;
   color: white;
   font-family: "Inter", sans-serif;
+}
+
+.card-booking {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 0;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 20px;
 }

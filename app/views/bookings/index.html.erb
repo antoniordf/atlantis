@@ -3,16 +3,31 @@
   <div class="row">
     <ul>
       <% current_user.bookings.each do |booking| %>
-      <br>
-        <div class="card">
-        <%# <%= cl_image_tag @article.photos.first.key, height: 300px, width: fill, object-fit: cover; %>
-          <img src="https://yachtshop.bluewateryachting.com/media/cache/app_shop_yacht_large_thumbnail/56/da/b2faecfaf01d3b7e74f66ecf8711.jpeg" />
-          <div class="card-infos">
-            <div>
-              <h2><%= link_to "#{booking.yacht.name}", booking_path(booking) %></h2>
-              <div class="short-disc">
-                <p>start date: <%= booking.start_date %> |</p>
-                <p>end date: <%= booking.end_date %> |</p>
+        <div class="card-booking">
+          <div class="booking-components">
+            <%# <%= cl_image_tag @article.photos.first.key, height: 300px, width: fill, object-fit: cover; %>
+            <div class="image image-booking">
+              <img src="https://yachtshop.bluewateryachting.com/media/cache/app_shop_yacht_large_thumbnail/56/da/b2faecfaf01d3b7e74f66ecf8711.jpeg" />
+            </div>
+            <div class="booking-details">
+              <div class="info">
+                <h2><%= link_to "#{booking.yacht.name}", booking_path(booking) %></h2>
+                <div class="info-detail">
+                  <div class="short-desc">
+                    <p>Start date: <%= booking.start_date %></p>
+                    <p>End date: <%= booking.end_date %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="action-buttons">
+                <div class="button">
+                  <%= link_to "Edit", edit_booking_path(booking) %>
+                </div>
+                <div class="button">
+                  <%= link_to "Delete",
+                      booking_path(booking),
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                </div>
               </div>
             </div>
           </div>
