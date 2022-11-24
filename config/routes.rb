@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
-    get "show", to: "bookings#show", as: :show
+    # get "show", to: "bookings#show", as: :show
   end
 end

@@ -26,9 +26,11 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    @yacht = @booking.yacht
   end
 
   def update
+    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       redirect_to booking_path(@booking)
     else
