@@ -10,17 +10,18 @@ my_user = User.new(email: "test3@gmail.com", password: "123456")
 
 my_user.save!
 
-my_yacht = Yacht.create(name: "Capri",
-                        length: 29,
-                        capacity: 20,
-                        description: "Its a good yacht",
-                        crew: 10,
+my_yacht = Yacht.new(name: "Capri",
+                        length: 58.6,
+                        capacity: 12,
+                        description: "Capri is a  motor yacht built by the German shipyard Lurssen is available for charter for up to 12 guests in 6 cabins. This yacht features interior styling by Glade Johnson Design..",
+                        crew: 15,
                         price_per_day: 50_000,
-                        location: "monaco",
-                        cabin: 10,
-                        speed: 20)
+                        location: "Capri",
+                        cabin: 6,
+                        speed: 13)
 
 my_yacht.user = my_user
+
 my_yacht.save!
 
 my_yacht1 = Yacht.create(name: "Capro",
