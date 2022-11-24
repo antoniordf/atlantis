@@ -1,8 +1,30 @@
-<h1>The 🛥️ rental platform they are all talking about</h1>
-<div class="container">
-  <div class="actions">
-    <div class="button">
-      <%= link_to "See our yachts", yachts_path %>
-    </div>
+<div class="banner-video">
+  <div class="video-tint">
   </div>
+  <%= video_tag "water.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+  <div class="text">
+    <h1>Luxury Yachts for Charter</h1>
+    <p>We are proven yacht charter experts in the Mediterranean, Caribbean and across the globe
+        with a large selection of sailing and motor yachts for rent.
+    </p>
+  </div>
+</div>
+
+<div class="cta">
+  <h1>Book your Super Yacht vacation with us</h1>
+  <br>
+  <p>For over 25 years Atlantis has been providing the ultimate in yacht charter for both corporate entertainment and private vacations. We ensure your yacht charter will be a success.</p>
+</div>
+
+<br>
+
+<div class="discover">
+  <%= link_to yachts_path do %>
+    <div class="text">
+      <h2>Discover our Yachts Selection</h2>
+      <%# <p>Make your next vacation the one to remember</p> %>
+    </div>
+    <div class="img-tint"></div>
+    <%= image_tag("harbor.png") %>
+  <% end %>
 </div>
