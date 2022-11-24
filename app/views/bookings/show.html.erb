@@ -1,1 +1,13 @@
-<h1>hi</h1>
+<h1>🎇Congratulations! Your booking of <%= "#{@booking.yacht.name}"  %>  is confirmed!🎇</h1>
+<br>
+<img src="https://e7.pngegg.com/pngimages/930/741/png-clipart-round-green-check-mark-illustration-check-mark-bottle-material-green-tick-miscellaneous-angle.png">
+<br>
+Here is my 🛥️ <%= link_to "#{@booking.yacht.name}", yacht_path %>
+<br>
+<br>
+When?
+<br>
+<%= @booking.start_date %> to <%= @booking.end_date %>
+<br>
+<br>
+<%= link_to "See all My bookings", bookings_path %>
