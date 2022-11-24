@@ -17,7 +17,7 @@
   }
 }
 
-p {
+.feature p {
   margin: 0px;
   font-family: Inter, sans-serif;
 }
@@ -32,8 +32,15 @@ p {
   color: gray;
   font-size: 25px;
   font-weight: light;
-  margin-top: 40px;
   font-family: Inter, sans-serif;
+
+  p {
+    font-size: 17px;
+  }
+
+  h2 {
+    color: black;
+  }
 }
 
 .images {
@@ -58,4 +65,17 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info {
+  margin-left: 25px;
+}
+
+.booking {
+  margin-top: 40px;
 }
