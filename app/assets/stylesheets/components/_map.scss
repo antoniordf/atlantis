@@ -8,8 +8,11 @@
 }
 
 .map {
-  border: 1px solid gray;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 50px;
+  width: 80%;
+  margin: auto;
+
+  h2 {
+  margin-bottom: 40px;
+  }
 }

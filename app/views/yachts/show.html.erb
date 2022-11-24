@@ -1,92 +1,101 @@
-<div class="container mt-5">
-  <div class="yacht-card">
-    <h2><%= @yacht.name %></h2>
-    <div class="rating_bar">
-      <span>★ 5.0  ·</span>
-      <span class="location">
-        <u><%= @yacht.location %></u>
-      </span>
-    </div>
+<div class="front-img">
+  <%= cl_image_tag @yacht.photos.first.key  %>
+</div>
+
+<br>
+
+<h1><%= @yacht.name %></h1>
+
+<div class="description">
+  <p><%= @yacht.description %></p>
+</div>
+
+<br>
+
+<div class="features">
+  <div class="feature">
+    <i class="fa-solid fa-ruler"></i>
+    <p>Length: <%= @yacht.length %> m</p>
   </div>
-
-  <div class="features">
-    <div class="feature">
-      <i class="fa-solid fa-ruler"></i>
-      <p>Length: <%= @yacht.length %> m</p>
-    </div>
-    <div class="feature">
-      <i class="fa-solid fa-person"></i>
-      <p>Capacity: <%= @yacht.capacity %></p>
-    </div>
-    <div class="feature">
-      <i class="fa-solid fa-person-booth"></i>
-      <p>Cabins: <%= @yacht.cabin %></p>
-    </div>
-    <div class="feature">
-      <i class="fa-solid fa-anchor"></i>
-      <p>Crew: <%= @yacht.crew %></p>
-    </div>
-    <div class="feature">
-      <i class="fa-solid fa-gauge-high"></i>
-      <p>Speed: <%= @yacht.speed %> knots</p>
-    </div>
-    <div class="feature">
-      <i class="fa-solid fa-hand-holding-dollar"></i>
-      <p>Price/day £<%= @yacht.price_per_day %></p>
-    </div>
-    <div class="feature">
-      <i class="fa-solid fa-location-dot"></i>
-      <p>Location: <%= @yacht.location %></p>
-    </div>
+  <div class="feature">
+    <i class="fa-solid fa-person"></i>
+    <p>Capacity: <%= @yacht.capacity %></p>
   </div>
+  <div class="feature">
+    <i class="fa-solid fa-person-booth"></i>
+    <p>Cabins: <%= @yacht.cabin %></p>
+  </div>
+  <div class="feature">
+    <i class="fa-solid fa-anchor"></i>
+    <p>Crew: <%= @yacht.crew %></p>
+  </div>
+  <div class="feature">
+    <i class="fa-solid fa-gauge-high"></i>
+    <p>Speed: <%= @yacht.speed %> knots</p>
+  </div>
+  <div class="feature">
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+    <p>Price/day £<%= @yacht.price_per_day %></p>
+  </div>
+  <div class="feature">
+    <i class="fa-solid fa-location-dot"></i>
+    <p>Location: <%= @yacht.location %></p>
+  </div>
+</div>
 
-  <br>
+<br>
 
-  <div class="content-container">
-    <div class="images">
-      <% @yacht.photos.each do |photo| %>
-        <div class="image">
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        </div>
-      <% end %>
-    </div>
-    <div class="info">
-      <div class="desc-booking">
-        <div class="description">
-          <h2>Description</h2>
-          <p><%= @yacht.description %></p>
-        </div>
-        <div class="booking">
-          <h3>Book <%= @yacht.name %></h3>
-          <%= simple_form_for [@yacht, @booking] do |f| %>
-            <%= f.input :start_date, as: :date, html5: true %>
-            <%= f.input :end_date, as: :date, html5: true %>
-            <%= f.submit "Book", class: "book-button" %>
-          <% end %>
+<div class="container">
+  <div class="row">
+    <% @yacht.photos.each do |photo| %>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="img">
+          <%= cl_image_tag photo.key, width: 300 %>
         </div>
       </div>
-      <div class="map">
-        <div style="width: 100%; height: 400px; border-radius: 10px;"
-          data-controller="map"
-          <%# We need to pass @marker here instead of @markers in the lecture notes %>
-          data-map-markers-value="<%= @marker.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<div class="map">
+  <h2>Current Location: <%= @yacht.location %></h2>
+  <div class="map-card">
+    <div style="width: 100%; height: 300px;"
+      data-controller="map"
+      <%# We need to pass @marker here instead of @markers in the lecture notes %>
+      data-map-markers-value="<%= @marker.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+</div>
 
-  <br>
-  <div class="actions">
-    <div class="button">
-      <%= link_to "Delete Yacht",
-        yacht_path(@yacht),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    </div>
-    <div class="button">
-      <%= link_to "Edit Yacht",
-        edit_yacht_path(@yacht) %>
-    </div>
+<br>
+
+<div class="booking">
+  <h2>Book <%= @yacht.name %></h2>
+  <div class="booking-card">
+    <%= simple_form_for [@yacht, @booking] do |f| %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
+      <br>
+      <%= f.submit "Book", class: "book-button" %>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<div class="actions">
+  <div class="button">
+    <%= link_to "Delete Yacht",
+      yacht_path(@yacht),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </div>
+  <div class="button">
+    <%= link_to "Edit Yacht",
+      edit_yacht_path(@yacht) %>
   </div>
 </div>
