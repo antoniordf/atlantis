@@ -1,0 +1,28 @@
+.booking-components {
+  display: flex;
+  align-items: center;
+}
+
+.image-booking img {
+  width: 200px;
+  margin: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.booking-details {
+  padding: 10px;
+  width: 100% ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.short-desc p {
+  margin: 0px;
+  color: gray;
+}
+
+.info-detail {
+  display: flex;
+  align-items: center;
+}
