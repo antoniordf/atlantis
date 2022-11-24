@@ -1,21 +1,13 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.9)),url(https://res.cloudinary.com/dqebjuhkq/image/upload/v1669136685/https___d1e00ek4ebabms.cloudfront.net_production_95d65ea6-2739-4f0b-9223-017849b04180_l5zyij.avif);">
-  <div class="banner-text">
-    <h1><%= @yacht.name %></h1>
-    <br>
-    <div class="button-wrapper">
-      <p class="book-button"><%= link_to "Book Yacht", new_yacht_booking_path(@yacht) %></p>
+<div class="container mt-5">
+  <div class="yacht-card">
+    <h2><%= @yacht.name %></h2>
+    <div class="rating_bar">
+      <span>★ 5.0  ·</span>
+      <span class="location">
+        <u><%= @yacht.location %></u>
+      </span>
     </div>
   </div>
-</div>
-
-<br>
-
-<div class="container">
-  <div class="description">
-    <p><%= @yacht.description %></p>
-  </div>
-
-  <br>
 
   <div class="features">
     <div class="feature">
@@ -50,12 +42,26 @@
 
   <br>
 
-  <div class="images">
-    <% @yacht.photos.each do |photo| %>
-      <div class="image">
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="content-container">
+    <div class="images">
+      <% @yacht.photos.each do |photo| %>
+        <div class="image">
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        </div>
+      <% end %>
+    </div>
+    <div class="info">
+      <div class="description">
+        <h2>Description</h2>
+        <p><%= @yacht.description %></p>
       </div>
-    <% end %>
+      <div class="booking">
+        <h3>Book</h3>
+      </div>
+      <div class="map">
+        <h3>Map</h3>
+      </div>
+    </div>
   </div>
 
   <br>
