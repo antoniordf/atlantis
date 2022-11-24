@@ -46,15 +46,18 @@
 .images {
   flex-grow: 1;
   width: 60%;
+  height: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
 }
 
+
+
 .image img {
   border: solid 1px lightgray;
   border-radius: 10px;
-  box-shadow: 1px 1px 3px #c8c3c3;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 }
 
 a {
@@ -78,4 +81,12 @@ a {
 
 .booking {
   margin-top: 40px;
+}
+
+.desc-booking {
+  border: 1px solid gray;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
 }
