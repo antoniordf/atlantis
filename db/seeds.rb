@@ -10,6 +10,7 @@ my_user = User.new(email: "test3@gmail.com", password: "123456")
 
 my_user.save!
 
+
 my_yacht = Yacht.new(name: "Capri",
                         length: 58.6,
                         capacity: 12,

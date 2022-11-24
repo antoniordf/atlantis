@@ -11,6 +11,15 @@ class YachtsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    # We want our map in the show page not index page like in lecture notes
+    # In our case we only show marker for 1 yacht, so no need to loop through array.
+    # However, JS map_controller expects an array to be passed in, so we make @marker an array
+    @marker = [{
+      lat: @yacht.latitude,
+      lng: @yacht.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { yacht: @yacht })
+    }]
   end
 
   def new
