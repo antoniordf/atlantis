@@ -4,7 +4,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 0;
   position: relative;
-  border-radius: 10px;
 }
 
 .card > img {
@@ -46,6 +45,19 @@
   justify-content: center;
   color: white;
   font-family: "Inter", sans-serif;
+}
+
+.map-card {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 16px;
+  margin-top: 20px;
+  margin: auto;
+}
+
+.booking-card {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 16px;
+  margin-top: 20px;
+  margin: auto;
+  padding: 30px 20px;
 }
 
 .card-booking {
