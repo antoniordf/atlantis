@@ -79,29 +79,38 @@
 
 <br>
 
-<div class="booking">
-  <h2><strong>Book <%= @yacht.name %><strong></h2>
-  <div class="booking-card">
-    <%= simple_form_for [@yacht, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :end_date, as: :date, html5: true %>
-      <br>
-      <%= f.submit "Book", class: "book-button" %>
-    <% end %>
+<% if current_user != @yacht.user %>
+  <div class="booking">
+    <h2><strong>Book <%= @yacht.name %><strong></h2>
+    <div class="booking-card">
+      <%= simple_form_for [@yacht, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <br>
+        <%= f.submit "Book", class: "book-button" %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <br>
 
-<div class="actions">
-  <div class="button">
-    <%= link_to "Delete Yacht",
-      yacht_path(@yacht),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
+
+<% if current_user == @yacht.user %>
+  <div class="actions">
+    <div class="button">
+      <%= link_to "Delete Yacht",
+        yacht_path(@yacht),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
+    <div class="button">
+      <%= link_to "Back",
+        yachts_path %>
+    </div>
+    <div class="button">
+      <%= link_to "Edit Yacht",
+        edit_yacht_path(@yacht) %>
+    </div>
   </div>
-  <div class="button">
-    <%= link_to "Edit Yacht",
-      edit_yacht_path(@yacht) %>
-  </div>
-</div>
+<% end %>
