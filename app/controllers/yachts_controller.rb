@@ -8,6 +8,13 @@ class YachtsController < ApplicationController
     else
       @yachts = Yacht.all
     end
+
+    @markers = @yachts.geocoded.map do |yacht|
+      {
+        lat: yacht.latitude,
+        lng: yacht.longitude
+      }
+    end
   end
 
   def show
