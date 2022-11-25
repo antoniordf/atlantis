@@ -10,7 +10,7 @@
             <% if @booking.yacht.photos.attached? %>
               <%= cl_image_tag @booking.yacht.photos.first.key, width: 300; %>
             <% else %>
-              <%= image_tag("https://images.theconversation.com/files/403129/original/file-20210527-21-wxxnze.jpg?ixlib=rb-1.1.0&rect=0%2C0%2C4537%2C3022&q=45&auto=format&w=926&fit=clip", width: 200) %>
+              <%= image_tag("https://images.theconversation.com/files/403129/original/file-20210527-21-wxxnze.jpg?ixlib=rb-1.1.0&rect=0%2C0%2C4537%2C3022&q=45&auto=format&w=926&fit=clip", width: 250) %>
             <% end %>
             <div class="booking-details">
               <div class="info">
