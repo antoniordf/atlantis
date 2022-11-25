@@ -1,7 +1,7 @@
 <br>
 <br>
 
-<h1>Booking Confirmation</h1>
+<h1><strong>Booking Confirmation<strong></h1>
 <div class="container">
   <div class="row">
     <ul>
@@ -10,7 +10,7 @@
             <%= cl_image_tag @booking.yacht.photos.first.key, width: 300; %>
             <div class="booking-details">
               <div class="info">
-                <h2><%= @booking.yacht.name %></h2>
+                <h2><%= link_to @booking.yacht.name, yacht_path(@booking.yacht) %></h2>
                 <div class="info-detail">
                   <div class="short-desc">
                     <p>Start date: <%= @booking.start_date %></p>
@@ -29,11 +29,11 @@
 
 <div class="links">
 
-  <%= link_to "Edit My Bookings", edit_booking_path(@booking) %>
-
-  <%= link_to "Delete My Bookings", booking_path(@booking),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-
   <%= link_to "See All My Bookings", bookings_path %>
+
+  <%= link_to "Change This Booking", edit_booking_path(@booking) %>
+
+  <%= link_to "Delete This Booking", booking_path(@booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 
 </div>
