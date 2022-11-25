@@ -1,3 +1,6 @@
+<br>
+<br>
+
 <h1>My Bookings</h1>
 <div class="container">
   <div class="row">
@@ -5,10 +8,7 @@
       <% current_user.bookings.each do |booking| %>
         <div class="card-booking">
           <div class="booking-components">
-            <%# <%= cl_image_tag @article.photos.first.key, height: 300px, width: fill, object-fit: cover; %>
-            <div class="image image-booking">
-              <img src="https://yachtshop.bluewateryachting.com/media/cache/app_shop_yacht_large_thumbnail/56/da/b2faecfaf01d3b7e74f66ecf8711.jpeg" />
-            </div>
+            <%= cl_image_tag booking.yacht.photos.first.key, width: 300; %>
             <div class="booking-details">
               <div class="info">
                 <h2><%= link_to "#{booking.yacht.name}", booking_path(booking) %></h2>

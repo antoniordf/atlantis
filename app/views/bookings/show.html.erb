@@ -1,21 +1,39 @@
-<h1>Your booking of <%= "#{@booking.yacht.name}"  %>  is confirmed!🎇</h1>
-<br>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOQnyVimgY2UvjUWONoq7jiqRP9bRF3uYCtg&usqp=CAU">
 <br>
 <br>
-Here is my 🛥️ <%= link_to "#{@booking.yacht.name}_(yacht image)", yacht_path(@booking.yacht) %>
+
+<h1>Booking Confirmation</h1>
+<div class="container">
+  <div class="row">
+    <ul>
+        <div class="card-booking-new">
+          <div class="booking-components">
+            <%= cl_image_tag @booking.yacht.photos.first.key, width: 300; %>
+            <div class="booking-details">
+              <div class="info">
+                <h2><%= @booking.yacht.name %></h2>
+                <div class="info-detail">
+                  <div class="short-desc">
+                    <p>Start date: <%= @booking.start_date %></p>
+                    <p>End date: <%= @booking.end_date %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </ul>
+  </div>
+</div>
+
 <br>
-<br>
-When?
-<br>
-<%= @booking.start_date %> to <%= @booking.end_date %>
-<br>
-<br>
-<%= link_to "Edit My bookings", edit_booking_path(@booking) %>
-<br>
-<br>
-<%= link_to "Delete My bookings", booking_path(@booking),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-<br>
-<br>
-<%= link_to "See all My bookings", bookings_path %>
+
+<div class="links">
+
+  <%= link_to "Edit My Bookings", edit_booking_path(@booking) %>
+
+  <%= link_to "Delete My Bookings", booking_path(@booking),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
+  <%= link_to "See All My Bookings", bookings_path %>
+
+</div>
