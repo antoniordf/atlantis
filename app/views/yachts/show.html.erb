@@ -80,15 +80,17 @@
     <div class="button">
       <%= link_to "Back", yachts_path %>
     </div>
-    <div class="button">
-      <%= link_to "Delete Yacht",
-        yacht_path(@yacht),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    </div>
-    <div class="button">
-      <%= link_to "Edit Yacht",
-        edit_yacht_path(@yacht) %>
-    </div>
+    <% if current_user == @yacht.user %>
+      <div class="button">
+        <%= link_to "Delete Yacht",
+          yacht_path(@yacht),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      </div>
+      <div class="button">
+        <%= link_to "Edit Yacht",
+          edit_yacht_path(@yacht) %>
+      </div>
+    <% end %>
   </div>
 </div>
