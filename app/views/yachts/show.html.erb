@@ -95,6 +95,7 @@
 
 <br>
 
+
 <% if current_user == @yacht.user %>
   <div class="actions">
     <div class="button">
@@ -102,6 +103,10 @@
         yacht_path(@yacht),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
       %>
+    </div>
+    <div class="button">
+      <%= link_to "Back",
+        yachts_path %>
     </div>
     <div class="button">
       <%= link_to "Edit Yacht",
