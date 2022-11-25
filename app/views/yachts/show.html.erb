@@ -54,8 +54,8 @@
   <div class="row">
     <% @yacht.photos.each do |photo| %>
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="shadow-img">
-          <%= cl_image_tag photo.key, width: 300 %>
+        <div class="shadow-img", style="background-image: url('<%= cl_image_path photo.key %>');">
+          <%# <%= cl_image_tag photo.key, width: 300 %> 
         </div>
       </div>
     <% end %>
