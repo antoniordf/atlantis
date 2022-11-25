@@ -8,7 +8,11 @@
       <% current_user.bookings.each do |booking| %>
         <div class="card-booking">
           <div class="booking-components">
-            <%= cl_image_tag booking.yacht.photos.first.key, width: 300; %>
+            <% if booking.yacht.photos.attached? %>
+              <%= cl_image_tag booking.yacht.photos.first.key, width: 300; %>
+            <% else %>
+              <%= image_tag src="https://images.theconversation.com/files/403129/original/file-20210527-21-wxxnze.jpg", width: 300; %>
+            <% end %>
             <div class="booking-details">
               <div class="info">
                 <h2><%= link_to "#{booking.yacht.name}", booking_path(booking) %></h2>
