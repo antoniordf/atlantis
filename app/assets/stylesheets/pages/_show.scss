@@ -59,9 +59,8 @@ h1 {
   font-size: 18px;
 }
 
+
 .images {
-  flex-grow: 1;
-  width: 60%;
   height: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -84,7 +83,7 @@ a {
 
 
 .container {
-  margin: 0 40px;
+  margin: auto;
 
   img {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 6px 16px;
