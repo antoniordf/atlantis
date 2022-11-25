@@ -99,18 +99,18 @@
 <% if current_user == @yacht.user %>
   <div class="actions">
     <div class="button">
-      <%= link_to "Delete Yacht",
-        yacht_path(@yacht),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    </div>
-    <div class="button">
       <%= link_to "Back",
         yachts_path %>
     </div>
     <div class="button">
-      <%= link_to "Edit Yacht",
+      <%= link_to "Update Yacht",
         edit_yacht_path(@yacht) %>
+    </div>
+    <div class="button">
+      <%= link_to "Delete Yacht",
+        yacht_path(@yacht),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
     </div>
   </div>
 <% end %>
