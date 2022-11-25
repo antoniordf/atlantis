@@ -8,7 +8,7 @@
 
 <br>
 
-<h1><%= @yacht.name %></h1>
+<h1><strong><%= @yacht.name %><strong></h1>
 
 <div class="description">
   <p><%= @yacht.description %></p>
@@ -66,7 +66,7 @@
 <br>
 
 <div class="map">
-  <h2>Current Location: <%= @yacht.location %></h2>
+  <h2>Current Location:<strong> <%= @yacht.location %><strong></h2>
   <div class="map-card">
     <div style="width: 100%; height: 300px;"
       data-controller="map"
@@ -81,7 +81,7 @@
 
 <% if current_user != @yacht.user %>
   <div class="booking">
-    <h2>Book <%= @yacht.name %></h2>
+    <h2><strong>Book <%= @yacht.name %><strong></h2>
     <div class="booking-card">
       <%= simple_form_for [@yacht, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
