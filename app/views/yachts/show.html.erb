@@ -108,10 +108,6 @@
           edit_yacht_path(@yacht) %>
       </div>
       <div class="button">
-        <%= link_to "Update Yacht",
-          edit_yacht_path(@yacht) %>
-      </div>
-      <div class="button">
         <%= link_to "Delete Yacht",
           yacht_path(@yacht),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
@@ -120,4 +116,3 @@
     <% end %>
   </div>
 </div>
-
