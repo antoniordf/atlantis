@@ -1,5 +1,9 @@
 <div class="front-img">
-  <%= cl_image_tag @yacht.photos.first.key  %>
+  <% if @yacht.photos.attached? %>
+   <%= cl_image_tag @yacht.photos.first.key %>
+  <% else %>
+    <%= image_tag("https://images.theconversation.com/files/403129/original/file-20210527-21-wxxnze.jpg?ixlib=rb-1.1.0&rect=0%2C0%2C4537%2C3022&q=45&auto=format&w=926&fit=clip") %>
+  <% end %>
 </div>
 
 <br>
@@ -49,7 +53,7 @@
   <div class="row">
     <% @yacht.photos.each do |photo| %>
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="img">
+        <div class="shadow-img">
           <%= cl_image_tag photo.key, width: 300 %>
         </div>
       </div>

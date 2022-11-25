@@ -82,15 +82,12 @@ a {
 }
 
 
-.container {
-  margin: auto;
-
-  img {
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 6px 16px;
-    margin-bottom: 20px;
-    object-fit: cover;
-  }
+.shadow-img {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 6px 16px;
+  margin-bottom: 20px;
+  object-fit: cover;
 }
+
 
 
 h2 {
